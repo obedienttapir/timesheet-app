@@ -1,0 +1,27 @@
+{
+  "issues": [
+    {
+      "key": "ISSUE-1",
+      "fields": {
+        "worklog": {
+          "worklogs": [
+            {"started": "2025-06-02T09:00:00.000+0000", "timeSpentSeconds": 7200},
+            {"started": "2025-06-03T10:00:00.000+0000", "timeSpentSeconds": 3600}
+          ]
+        },
+        "customfield_charge": "CN123"
+      }
+    },
+    {
+      "key": "ISSUE-2",
+      "fields": {
+        "worklog": {
+          "worklogs": [
+            {"started": "2025-06-04T11:00:00.000+0000", "timeSpentSeconds": 14400}
+          ]
+        },
+        "customfield_charge": "CN456"
+      }
+    }
+  ]
+}
