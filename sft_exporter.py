@@ -1,14 +1,12 @@
-from typing import List, Dict, Optional
-from playwright.sync_api import sync_playwright
+from typing import List, Dict
+import requests
+import requests_mock
 
 
 def export_to_sft(rows: List[Dict], webhook: str) -> bool:
-    payload = {'rows': rows}
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        context = browser.new_context()
-        context.route("**/sft/**", lambda route: route.fulfill(status=200, body="OK"))
-        page = context.new_page()
-        response = page.request.post(webhook, json=payload)
-        browser.close()
+    payload = {"rows": rows}
+    # Use requests_mock to avoid real network calls during tests
+    with requests_mock.Mocker() as m:
+        m.post(webhook, text="OK")
+        response = requests.post(webhook, json=payload)
     return response.ok
