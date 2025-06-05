@@ -1,0 +1,6 @@
+rich
+textual
+atlassian-python-api
+playwright
+requests-mock
+python-dateutil

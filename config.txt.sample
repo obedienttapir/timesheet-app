@@ -1,0 +1,8 @@
+[jira]
+url=https://jira.example.com
+username=your_username
+token=your_token
+jql=worklogDate >= startOfWeek()
+
+[sft]
+webhook=https://sft-bridge.example.com/import
